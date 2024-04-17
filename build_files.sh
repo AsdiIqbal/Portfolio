@@ -1,7 +1,7 @@
 #!/bin/bash
 # Build the project
 echo "Building the project..."
-python3.8 -m pip install -r requirements.txt
+python3.8 -m pip3 install -r requirements.txt
 echo "Completely built"
 
 echo "Make Migration..."
