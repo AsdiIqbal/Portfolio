@@ -1,6 +1,7 @@
 #!/bin/bash
 # Build the project
 echo "Building the project...ABC"
+python3.9 get-pip.py
 python3.9 -m pip install -r requirements.txt
 echo "Completely built"
 
