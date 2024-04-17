@@ -1,6 +1,6 @@
 #!/bin/bash
 # Build the project
-echo "Building the project..."
+echo "Building the project...ABC"
 python3.8 -m pip3 install -r requirements.txt
 echo "Completely built"
 
