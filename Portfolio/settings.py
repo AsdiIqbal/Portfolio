@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-468&2!67jbq!_m0izv1-jwl56-c2l&=kb4fv8glmq7u3&-w*i)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost',"0.0.0.0:6147","*"]
 
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'Portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR,"templates","Services\Service_Templates"],
+        'DIRS': [BASE_DIR,"templates","Services/Service_Templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,12 +118,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
+
 STATICFILES_DIRS = [
 # Put strings here, like "/home/html/static" or "C:/www/django/static".
 # Always use forward slashes, even on Windows.
 # Don't forget to use absolute paths, not relative paths.
-BASE_DIR,'static'
-
+os.path.join(BASE_DIR,'static')
 ]
 
 # Default primary key field type
@@ -130,7 +132,5 @@ BASE_DIR,'static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import os
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
